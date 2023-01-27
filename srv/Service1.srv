@@ -1,0 +1,4 @@
+int8 goal_count
+----
+int8 cancelled
+int8 reached
