@@ -1,5 +1,12 @@
 // Jan Drozd (s5646665)
 
+//**
+ * @file   node_b.cpp
+ * @author Jan Drozd
+ * @date   3/05/2023
+ * @brief  A service node that, when called, prints the number of goals reached and cancelled.
+ */
+
 #include <ros/ros.h>
 #include <assignment_2_2022/PlanningAction.h>
 #include <assignment_2_2022/Service1.h>
@@ -8,11 +15,15 @@
 
 using namespace ros;
 
-// initialize global variables for counting reached and cancelled goals
+/// @brief Initialize global variables for counting reached and cancelled goals
 int goals_reached = 0;
 int goals_cancelled = 0;
 
-// status callback function
+/**
+ * @brief Status callback function
+ * 
+ * @param msg Pointer to the received PlanningActionResult message
+ */
 void status_callback(const assignment_2_2022::PlanningActionResult::ConstPtr &msg)
 {
     if (msg->status.status == 3)
@@ -23,7 +34,13 @@ void status_callback(const assignment_2_2022::PlanningActionResult::ConstPtr &ms
     }
 }
 
-// goal count function
+/**
+ * @brief Goal count function
+ *
+ * @param req Service request
+ * @param res Service response
+ * @return true on successful execution
+ */
 bool goal_count(assignment_2_2022::Service1::Request &req, assignment_2_2022::Service1::Response &res)
 {
     goals_cancelled += 1; // increment the number of cancelled goals
@@ -33,6 +50,15 @@ bool goal_count(assignment_2_2022::Service1::Request &req, assignment_2_2022::Se
     return true;
 }
 
+/**
+ * @brief Main function for node_b
+ *
+ * This node is responsible for providing a service that prints the number of goals reached and
+ * cancelled. Additionally, it subscribes to the action result topic to update the number of
+ * reached goals when the robot reaches a goal.
+ *
+ * @return 0 on successful execution
+ */
 int main(int argc, char **argv)
 {
     init(argc, argv, "node_b"); // initialize node

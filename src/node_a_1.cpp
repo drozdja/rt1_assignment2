@@ -1,5 +1,12 @@
 //Jan Drozd (s5646665)
 
+/**
+ * @file   node_a_1.cpp
+ * @author Jan Drozd
+ * @date   3/05/2023
+ * @brief  A node that implements an action client, allowing the user to set a target (x, y) or to cancel it.
+ */
+
 #include "ros/ros.h"
 #include <actionlib/client/simple_action_client.h>
 #include <assignment_2_2022/PlanningAction.h>
@@ -8,18 +15,35 @@
 
 using namespace std;
 
-// Declare variable to hold new goal position
-double x_new, y_new;
+/// @brief Variable to hold new goal position x-coordinate
+double x_new;
 
+/// @brief Variable to hold new goal position y-coordinate
+double y_new;
+
+/**
+ * @brief Main function for node_a_1
+ *
+ * This node is responsible for implementing an action client that allows the user
+ * to set a new target (x, y) goal or to cancel the current goal. The node interacts
+ * with an action server to send goals or cancel them, and it communicates with
+ * a service node to track the number of goals reached and canceled.
+ *
+ * @return 0 on successful execution
+ */
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "node_a_1"); // initialize node
+    // Initialize node
+    ros::init(argc, argv, "node_a_1"); 
     ros::NodeHandle n;
 
+    // Declare a service client for the /goal_info service
     ros::ServiceClient client = n.serviceClient<assignment_2_2022::Service1>("/goal_info");
-    assignment_2_2022::Service1 goal; // Declare a goal object
 
-    // Create a simple action client for interacting with the action server
+    // Declare a goal object for the /goal_info service
+    assignment_2_2022::Service1 goal;
+
+    // Create a simple action client for interacting with the /reaching_goal action server
     actionlib::SimpleActionClient<assignment_2_2022::PlanningAction> ac("/reaching_goal", true);
     ROS_INFO("Waiting for the action server");
     ac.waitForServer();
@@ -27,6 +51,8 @@ int main(int argc, char **argv)
 
     // Declare a variable to hold the target goal
     assignment_2_2022::PlanningGoal target;
+
+    // Declare a variable to hold user input for goal setting or cancellation
     string key;
 
     while (ros::ok())
@@ -42,6 +68,7 @@ int main(int argc, char **argv)
             cout << "\ny:\n";
             cin >> y_new;
             
+            // Set the target goal's position
             target.target_pose.pose.position.x = x_new;
             target.target_pose.pose.position.y = y_new;
 
@@ -59,7 +86,7 @@ int main(int argc, char **argv)
             ac.cancelGoal();
             ROS_INFO("Goal cancelled");
 
-            // Request goal cancellation from the goal_info service
+            // Request goal cancellation from the /goal_info service
             goal.request.goal_count = 1;
             client.call(goal);
         }

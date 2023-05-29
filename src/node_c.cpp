@@ -1,17 +1,31 @@
 // Jan Drozd (s5646665)
 
+/**
+ * @file   node_c.cpp
+ * @author Jan Drozd
+ * @date   3/05/2023
+ * @brief  A node that subscribes to the robot's position and velocity (using the custom message),
+ *         and prints the distance of the robot from the target and the robot's average speed.
+ */
+
 #include <ros/ros.h>
 #include <assignment_2_2022/Message1.h>
 #include <math.h>
 
 using namespace ros;
 
-// Declare variables in the global scope
+/// @brief Declare variables in the global scope
 double p_x, p_y, v_x, v_y;
 double vel = 0.0;
 int count = 1;
 
-// Helper function for computing distance
+/**
+ * @brief Helper function for computing distance
+ *
+ * @param p_x Robot's x position
+ * @param p_y Robot's y position
+ * @return Distance between the robot and the target
+ */
 double distance(double p_x, double p_y){
     double t_x, t_y, dist;
     // Get the desired position from parameters
@@ -22,7 +36,13 @@ double distance(double p_x, double p_y){
     return dist;
 }
 
-// Helper function for computing average speed
+/**
+ * @brief Helper function for computing average speed
+ *
+ * @param v_x Robot's x velocity
+ * @param v_y Robot's y velocity
+ * @return Average speed of the robot
+ */
 double average_speed(double v_x, double v_y){
     double ave_vel;
     // Accumulate the velocities
@@ -31,7 +51,11 @@ double average_speed(double v_x, double v_y){
     return ave_vel;
 }
 
-// Callback function for processing robot data
+/**
+ * @brief Callback function for processing robot data
+ *
+ * @param data Pointer to the received custom message
+ */
 void dataCallback(const assignment_2_2022::Message1::ConstPtr& data){
     p_x = data->x;
     p_y = data->y;
@@ -44,6 +68,14 @@ void dataCallback(const assignment_2_2022::Message1::ConstPtr& data){
     count += 1;
 }
 
+/**
+ * @brief Main function for node_c
+ *
+ * This node subscribes to the robot's position and velocity and calculates the distance
+ * between the robot and the target, as well as the average speed of the robot.
+ *
+ * @return 0 on successful execution
+ */
 int main(int argc, char **argv){
 
     init(argc, argv, "node_c"); // initialize node
