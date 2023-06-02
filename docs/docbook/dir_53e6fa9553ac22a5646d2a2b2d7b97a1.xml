@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_53e6fa9553ac22a5646d2a2b2d7b97a1">
+<title>scripts Directory Reference</title>
+<indexterm><primary>scripts Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_bug__as_8py">bug_as.py</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_go__to__point__service_8py">go_to_point_service.py</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_wall__follow__service_8py">wall_follow_service.py</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

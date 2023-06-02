@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['that_125',['that',['../node__b_8cpp.html#a0d8d7832cd3007fe3584052106e4ae4b',1,'node_b.cpp']]]
+  ['ub_5fa_124',['ub_a',['../namespacego__to__point__service.html#ae65f765636456df7afcf93a22b51038e',1,'go_to_point_service']]],
+  ['ub_5fd_125',['ub_d',['../namespacego__to__point__service.html#a6f1913e3ce0b294a3cc1a519079137b9',1,'go_to_point_service']]]
 ];

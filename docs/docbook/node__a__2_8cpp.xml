@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_node__a__2_8cpp">
+<title>src/node_a_2.cpp File Reference</title>
+<indexterm><primary>src/node_a_2.cpp</primary></indexterm>
+<para>
+
+<para>A node that publishes the robot position and velocity as a custom message (x, y, vel_x, vel_y), relying on the values published on the topic /odom. </para>
+ 
+</para>
+<programlisting>#include &lt;ros/ros.h&gt;
+#include &lt;nav_msgs/Odometry.h&gt;
+#include &lt;assignment_2_2022/Message1.h&gt;
+</programlisting>Include dependency graph for node_a_2.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="node__a__2_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_node__a__2_8cpp_1afeb547498130369c8cc6f7915cb7f5b2">data_callback</link> (const nav_msgs::Odometry::ConstPtr &amp;msg)</para>
+</listitem>
+            <listitem><para>int <link linkend="_node__a__2_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627">main</link> (int argc, char **argv)</para>
+
+<para>Main function for node_a_2. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_node__a__2_8cpp_1af88b946fb90d5f08b5fb740c70e98c10">x</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_node__a__2_8cpp_1ab927965981178aa1fba979a37168db2a">y</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_node__a__2_8cpp_1aa28e83f1aeabe23d806450842a7b8de2">vel_x</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_node__a__2_8cpp_1ad96d80a2d23bd4be1d04d8d4076c0250">vel_y</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_node__a__2_8cpp_1a26aea75a25190af8d4bebf654888935d">freq</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A node that publishes the robot position and velocity as a custom message (x, y, vel_x, vel_y), relying on the values published on the topic /odom. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Jan Drozd </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>3/05/2023 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_node__a__2_8cpp_1afeb547498130369c8cc6f7915cb7f5b2"/>    <section>
+    <title>data_callback()</title>
+<indexterm><primary>data_callback</primary><secondary>node_a_2.cpp</secondary></indexterm>
+<indexterm><primary>node_a_2.cpp</primary><secondary>data_callback</secondary></indexterm>
+<para><computeroutput>void data_callback (const nav_msgs::Odometry::ConstPtr &amp; msg)</computeroutput></para><para>
+Definition at line 21 of file node_a_2.cpp.</para>
+    </section><anchor xml:id="_node__a__2_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>node_a_2.cpp</secondary></indexterm>
+<indexterm><primary>node_a_2.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (int argc, char ** argv)</computeroutput></para><para>
+
+<para>Main function for node_a_2. </para>
+</para>
+
+<para>This node is responsible for subscribing to the robot&apos;s odometry data (position and velocity) published on the /odom topic. It then publishes the position and velocity as a custom message (x, y, vel_x, vel_y) to be consumed by other nodes.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>0 on successful execution </para>
+</formalpara>
+</para>
+<para>
+Definition at line 38 of file node_a_2.cpp.</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_node__a__2_8cpp_1a26aea75a25190af8d4bebf654888935d"/>    <section>
+    <title>freq</title>
+<indexterm><primary>freq</primary><secondary>node_a_2.cpp</secondary></indexterm>
+<indexterm><primary>node_a_2.cpp</primary><secondary>freq</secondary></indexterm>
+<para><computeroutput>double freq</computeroutput></para><para>
+Definition at line 18 of file node_a_2.cpp.</para>
+    </section><anchor xml:id="_node__a__2_8cpp_1aa28e83f1aeabe23d806450842a7b8de2"/>    <section>
+    <title>vel_x</title>
+<indexterm><primary>vel_x</primary><secondary>node_a_2.cpp</secondary></indexterm>
+<indexterm><primary>node_a_2.cpp</primary><secondary>vel_x</secondary></indexterm>
+<para><computeroutput>double vel_x</computeroutput></para><para>
+Definition at line 18 of file node_a_2.cpp.</para>
+    </section><anchor xml:id="_node__a__2_8cpp_1ad96d80a2d23bd4be1d04d8d4076c0250"/>    <section>
+    <title>vel_y</title>
+<indexterm><primary>vel_y</primary><secondary>node_a_2.cpp</secondary></indexterm>
+<indexterm><primary>node_a_2.cpp</primary><secondary>vel_y</secondary></indexterm>
+<para><computeroutput>double vel_y</computeroutput></para><para>
+Definition at line 18 of file node_a_2.cpp.</para>
+    </section><anchor xml:id="_node__a__2_8cpp_1af88b946fb90d5f08b5fb740c70e98c10"/>    <section>
+    <title>x</title>
+<indexterm><primary>x</primary><secondary>node_a_2.cpp</secondary></indexterm>
+<indexterm><primary>node_a_2.cpp</primary><secondary>x</secondary></indexterm>
+<para><computeroutput>double x</computeroutput></para><para>
+Definition at line 18 of file node_a_2.cpp.</para>
+    </section><anchor xml:id="_node__a__2_8cpp_1ab927965981178aa1fba979a37168db2a"/>    <section>
+    <title>y</title>
+<indexterm><primary>y</primary><secondary>node_a_2.cpp</secondary></indexterm>
+<indexterm><primary>node_a_2.cpp</primary><secondary>y</secondary></indexterm>
+<para><computeroutput>double y</computeroutput></para><para>
+Definition at line 18 of file node_a_2.cpp.</para>
+</section>
+</section>
+</section>

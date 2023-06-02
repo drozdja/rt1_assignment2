@@ -1,6 +1,6 @@
 // Jan Drozd (s5646665)
 
-//**
+/**
  * @file   node_b.cpp
  * @author Jan Drozd
  * @date   3/05/2023

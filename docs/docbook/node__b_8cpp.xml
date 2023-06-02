@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_node__b_8cpp">
+<title>src/node_b.cpp File Reference</title>
+<indexterm><primary>src/node_b.cpp</primary></indexterm>
+<para>
+
+<para>A service node that, when called, prints the number of goals reached and cancelled. </para>
+ 
+</para>
+<programlisting>#include &lt;ros/ros.h&gt;
+#include &lt;assignment_2_2022/PlanningAction.h&gt;
+#include &lt;assignment_2_2022/Service1.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;math.h&gt;
+</programlisting>Include dependency graph for node_b.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="node__b_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_node__b_8cpp_1a03598bb5d16d371d9a039ad3194b2bd6">status_callback</link> (const assignment_2_2022::PlanningActionResult::ConstPtr &amp;msg)</para>
+
+<para>Status callback function. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_node__b_8cpp_1a162d66129ac7342fb8168a916ee0f40b">goal_count</link> (assignment_2_2022::Service1::Request &amp;req, assignment_2_2022::Service1::Response &amp;res)</para>
+
+<para>Goal count function. </para>
+</listitem>
+            <listitem><para>int <link linkend="_node__b_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627">main</link> (int argc, char **argv)</para>
+
+<para>Main function for node_b. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_node__b_8cpp_1a5f3d0a9b352162918a7bd485e9f69a68">goals_reached</link> = 0</para>
+
+<para>Initialize global variables for counting reached and cancelled goals. </para>
+</listitem>
+            <listitem><para>int <link linkend="_node__b_8cpp_1a215b3d6f6748581a9463b40a94b84ca7">goals_cancelled</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A service node that, when called, prints the number of goals reached and cancelled. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Jan Drozd </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>3/05/2023 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_node__b_8cpp_1a162d66129ac7342fb8168a916ee0f40b"/>    <section>
+    <title>goal_count()</title>
+<indexterm><primary>goal_count</primary><secondary>node_b.cpp</secondary></indexterm>
+<indexterm><primary>node_b.cpp</primary><secondary>goal_count</secondary></indexterm>
+<para><computeroutput>bool goal_count (assignment_2_2022::Service1::Request &amp; req, assignment_2_2022::Service1::Response &amp; res)</computeroutput></para><para>
+
+<para>Goal count function. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>req</entry>
+                                <entry>
+<para>Service request </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>res</entry>
+                                <entry>
+<para>Service response </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true on successful execution </para>
+</formalpara>
+</para>
+<para>
+Definition at line 44 of file node_b.cpp.</para>
+    </section><anchor xml:id="_node__b_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>node_b.cpp</secondary></indexterm>
+<indexterm><primary>node_b.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (int argc, char ** argv)</computeroutput></para><para>
+
+<para>Main function for node_b. </para>
+</para>
+
+<para>This node is responsible for providing a service that prints the number of goals reached and cancelled. Additionally, it subscribes to the action result topic to update the number of reached goals when the robot reaches a goal.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>0 on successful execution </para>
+</formalpara>
+</para>
+<para>
+Definition at line 62 of file node_b.cpp.</para>
+    </section><anchor xml:id="_node__b_8cpp_1a03598bb5d16d371d9a039ad3194b2bd6"/>    <section>
+    <title>status_callback()</title>
+<indexterm><primary>status_callback</primary><secondary>node_b.cpp</secondary></indexterm>
+<indexterm><primary>node_b.cpp</primary><secondary>status_callback</secondary></indexterm>
+<para><computeroutput>void status_callback (const assignment_2_2022::PlanningActionResult::ConstPtr &amp; msg)</computeroutput></para><para>
+
+<para>Status callback function. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>msg</entry>
+                                <entry>
+<para>Pointer to the received PlanningActionResult message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 27 of file node_b.cpp.</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_node__b_8cpp_1a215b3d6f6748581a9463b40a94b84ca7"/>    <section>
+    <title>goals_cancelled</title>
+<indexterm><primary>goals_cancelled</primary><secondary>node_b.cpp</secondary></indexterm>
+<indexterm><primary>node_b.cpp</primary><secondary>goals_cancelled</secondary></indexterm>
+<para><computeroutput>int goals_cancelled = 0</computeroutput></para><para>
+Definition at line 20 of file node_b.cpp.</para>
+    </section><anchor xml:id="_node__b_8cpp_1a5f3d0a9b352162918a7bd485e9f69a68"/>    <section>
+    <title>goals_reached</title>
+<indexterm><primary>goals_reached</primary><secondary>node_b.cpp</secondary></indexterm>
+<indexterm><primary>node_b.cpp</primary><secondary>goals_reached</secondary></indexterm>
+<para><computeroutput>int goals_reached = 0</computeroutput></para><para>
+
+<para>Initialize global variables for counting reached and cancelled goals. </para>
+</para>
+<para>
+Definition at line 19 of file node_b.cpp.</para>
+</section>
+</section>
+</section>

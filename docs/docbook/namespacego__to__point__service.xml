@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacego__to__point__service">
+<title>go_to_point_service Namespace Reference</title>
+<indexterm><primary>go_to_point_service</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1acf2f8e880355dd31df1f330f7f10b7f9">go_to_point_switch</link> (req)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1adcbe48e090034144d76fea10c6537ac9">clbk_odom</link> (msg)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1abb8fd97f7fbaccc6b4f1f80b258c7977">change_state</link> (state)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1a5cb3225f30d2cdefd5cda701f13e1f9e">normalize_angle</link> (angle)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1a60e4565e2e2ebffba35774ee78838e77">fix_yaw</link> (des_pos)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1a531455abf876b239c51ab236f7d459b2">go_straight_ahead</link> (des_pos)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1a8fd364cf9483fb92353279ddd13116d0">done</link> ()</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1aff61ce18210c0b3ae85d5a24810631ef">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_namespacego__to__point__service_1abe657bd9603dc3f58a1956668813514e">active_</link> = False</para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1a7687850055557a27f335be20e994c023">position_</link> = Point()</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacego__to__point__service_1ac0d754b5218554bf0aa6507e08262aa4">yaw_</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacego__to__point__service_1a7302709bb82adca46efc76daaa821aa7">state_</link> = 0</para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1a17e47e580dbbf300a91d42e81bb91856">desired_position_</link> = Point()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1a2e836af955467ad8d94a57e154023d75">x</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1af174820ca4271dd1a4a3db2cb16c5582">y</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1a1e0590d4e8fc1de7369864255776b1ac">z</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacego__to__point__service_1a2464d5355e9bb593fa3ab79354a574f1">yaw_precision_</link> = math.pi / 9</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacego__to__point__service_1a53e290ebfa498679a2421356d35ccd0e">yaw_precision_2_</link> = math.pi / 90</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1af5f23f6949a7c8902af969b86d59f0ff">dist_precision_</link> = 0.3</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1aa4dcb2c51349c6a486168f6bc2cdb094">kp_a</link> = 3.0</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1a1dbf3b8830618a71226b15c005c0b5e5">kp_d</link> = 0.2</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1ae65f765636456df7afcf93a22b51038e">ub_a</link> = 0.6</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1a54d632450f4291a2ff664550f68af893">lb_a</link> = -0.5</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1a6f1913e3ce0b294a3cc1a519079137b9">ub_d</link> = 0.6</para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1ae04aed6a94addf0dd452dfe17235b8fc">pub</link> = None</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespacego__to__point__service_1abb8fd97f7fbaccc6b4f1f80b258c7977"/>    <section>
+    <title>change_state()</title>
+<indexterm><primary>change_state</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>change_state</secondary></indexterm>
+<para><computeroutput>def go_to_point_service.change_state ( state)</computeroutput></para><para>
+Definition at line 71 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1adcbe48e090034144d76fea10c6537ac9"/>    <section>
+    <title>clbk_odom()</title>
+<indexterm><primary>clbk_odom</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>clbk_odom</secondary></indexterm>
+<para><computeroutput>def go_to_point_service.clbk_odom ( msg)</computeroutput></para><para>
+Definition at line 54 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a8fd364cf9483fb92353279ddd13116d0"/>    <section>
+    <title>done()</title>
+<indexterm><primary>done</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>done</secondary></indexterm>
+<para><computeroutput>def go_to_point_service.done ( )</computeroutput></para><para>
+Definition at line 131 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a60e4565e2e2ebffba35774ee78838e77"/>    <section>
+    <title>fix_yaw()</title>
+<indexterm><primary>fix_yaw</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>fix_yaw</secondary></indexterm>
+<para><computeroutput>def go_to_point_service.fix_yaw ( des_pos)</computeroutput></para><para>
+Definition at line 83 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a531455abf876b239c51ab236f7d459b2"/>    <section>
+    <title>go_straight_ahead()</title>
+<indexterm><primary>go_straight_ahead</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>go_straight_ahead</secondary></indexterm>
+<para><computeroutput>def go_to_point_service.go_straight_ahead ( des_pos)</computeroutput></para><para>
+Definition at line 106 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1acf2f8e880355dd31df1f330f7f10b7f9"/>    <section>
+    <title>go_to_point_switch()</title>
+<indexterm><primary>go_to_point_switch</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>go_to_point_switch</secondary></indexterm>
+<para><computeroutput>def go_to_point_service.go_to_point_switch ( req)</computeroutput></para><para>
+Definition at line 43 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1aff61ce18210c0b3ae85d5a24810631ef"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>def go_to_point_service.main ( )</computeroutput></para><para>
+Definition at line 138 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a5cb3225f30d2cdefd5cda701f13e1f9e"/>    <section>
+    <title>normalize_angle()</title>
+<indexterm><primary>normalize_angle</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>normalize_angle</secondary></indexterm>
+<para><computeroutput>def go_to_point_service.normalize_angle ( angle)</computeroutput></para><para>
+Definition at line 77 of file go_to_point_service.py.</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespacego__to__point__service_1abe657bd9603dc3f58a1956668813514e"/>    <section>
+    <title>active_</title>
+<indexterm><primary>active_</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>active_</secondary></indexterm>
+<para><computeroutput>bool go_to_point_service.active_ = False</computeroutput></para><para>
+Definition at line 14 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a17e47e580dbbf300a91d42e81bb91856"/>    <section>
+    <title>desired_position_</title>
+<indexterm><primary>desired_position_</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>desired_position_</secondary></indexterm>
+<para><computeroutput>go_to_point_service.desired_position_ = Point()</computeroutput></para><para>
+Definition at line 22 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1af5f23f6949a7c8902af969b86d59f0ff"/>    <section>
+    <title>dist_precision_</title>
+<indexterm><primary>dist_precision_</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>dist_precision_</secondary></indexterm>
+<para><computeroutput>float go_to_point_service.dist_precision_ = 0.3</computeroutput></para><para>
+Definition at line 29 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1aa4dcb2c51349c6a486168f6bc2cdb094"/>    <section>
+    <title>kp_a</title>
+<indexterm><primary>kp_a</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>kp_a</secondary></indexterm>
+<para><computeroutput>float go_to_point_service.kp_a = 3.0</computeroutput></para><para>
+Definition at line 31 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a1dbf3b8830618a71226b15c005c0b5e5"/>    <section>
+    <title>kp_d</title>
+<indexterm><primary>kp_d</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>kp_d</secondary></indexterm>
+<para><computeroutput>float go_to_point_service.kp_d = 0.2</computeroutput></para><para>
+Definition at line 32 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a54d632450f4291a2ff664550f68af893"/>    <section>
+    <title>lb_a</title>
+<indexterm><primary>lb_a</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>lb_a</secondary></indexterm>
+<para><computeroutput>float go_to_point_service.lb_a = -0.5</computeroutput></para><para>
+Definition at line 34 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a7687850055557a27f335be20e994c023"/>    <section>
+    <title>position_</title>
+<indexterm><primary>position_</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>position_</secondary></indexterm>
+<para><computeroutput>go_to_point_service.position_ = Point()</computeroutput></para><para>
+Definition at line 17 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1ae04aed6a94addf0dd452dfe17235b8fc"/>    <section>
+    <title>pub</title>
+<indexterm><primary>pub</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>pub</secondary></indexterm>
+<para><computeroutput>go_to_point_service.pub = None</computeroutput></para><para>
+Definition at line 38 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a7302709bb82adca46efc76daaa821aa7"/>    <section>
+    <title>state_</title>
+<indexterm><primary>state_</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>state_</secondary></indexterm>
+<para><computeroutput>int go_to_point_service.state_ = 0</computeroutput></para><para>
+Definition at line 20 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1ae65f765636456df7afcf93a22b51038e"/>    <section>
+    <title>ub_a</title>
+<indexterm><primary>ub_a</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>ub_a</secondary></indexterm>
+<para><computeroutput>float go_to_point_service.ub_a = 0.6</computeroutput></para><para>
+Definition at line 33 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a6f1913e3ce0b294a3cc1a519079137b9"/>    <section>
+    <title>ub_d</title>
+<indexterm><primary>ub_d</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>ub_d</secondary></indexterm>
+<para><computeroutput>float go_to_point_service.ub_d = 0.6</computeroutput></para><para>
+Definition at line 35 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a2e836af955467ad8d94a57e154023d75"/>    <section>
+    <title>x</title>
+<indexterm><primary>x</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>x</secondary></indexterm>
+<para><computeroutput>go_to_point_service.x</computeroutput></para><para>
+Definition at line 23 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1af174820ca4271dd1a4a3db2cb16c5582"/>    <section>
+    <title>y</title>
+<indexterm><primary>y</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>y</secondary></indexterm>
+<para><computeroutput>go_to_point_service.y</computeroutput></para><para>
+Definition at line 24 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1ac0d754b5218554bf0aa6507e08262aa4"/>    <section>
+    <title>yaw_</title>
+<indexterm><primary>yaw_</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>yaw_</secondary></indexterm>
+<para><computeroutput>int go_to_point_service.yaw_ = 0</computeroutput></para><para>
+Definition at line 18 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a2464d5355e9bb593fa3ab79354a574f1"/>    <section>
+    <title>yaw_precision_</title>
+<indexterm><primary>yaw_precision_</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>yaw_precision_</secondary></indexterm>
+<para><computeroutput>int go_to_point_service.yaw_precision_ = math.pi / 9</computeroutput></para><para>
+Definition at line 27 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a53e290ebfa498679a2421356d35ccd0e"/>    <section>
+    <title>yaw_precision_2_</title>
+<indexterm><primary>yaw_precision_2_</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>yaw_precision_2_</secondary></indexterm>
+<para><computeroutput>int go_to_point_service.yaw_precision_2_ = math.pi / 90</computeroutput></para><para>
+Definition at line 28 of file go_to_point_service.py.</para>
+    </section><anchor xml:id="_namespacego__to__point__service_1a1e0590d4e8fc1de7369864255776b1ac"/>    <section>
+    <title>z</title>
+<indexterm><primary>z</primary><secondary>go_to_point_service</secondary></indexterm>
+<indexterm><primary>go_to_point_service</primary><secondary>z</secondary></indexterm>
+<para><computeroutput>go_to_point_service.z</computeroutput></para><para>
+Definition at line 25 of file go_to_point_service.py.</para>
+</section>
+</section>
+</section>

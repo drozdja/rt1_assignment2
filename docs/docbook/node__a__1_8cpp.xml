@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_node__a__1_8cpp">
+<title>src/node_a_1.cpp File Reference</title>
+<indexterm><primary>src/node_a_1.cpp</primary></indexterm>
+<para>
+
+<para>A node that implements an action client, allowing the user to set a target (x, y) or to cancel it. </para>
+ 
+</para>
+<programlisting>#include &quot;ros/ros.h&quot;
+#include &lt;actionlib/client/simple_action_client.h&gt;
+#include &lt;assignment_2_2022/PlanningAction.h&gt;
+#include &lt;assignment_2_2022/Service1.h&gt;
+#include &lt;iostream&gt;
+</programlisting>Include dependency graph for node_a_1.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="node__a__1_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_node__a__1_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627">main</link> (int argc, char **argv)</para>
+
+<para>Main function for node_a_1. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_node__a__1_8cpp_1ac85e973dc539d2828e70e8fbd9e72713">x_new</link></para>
+
+<para>Variable to hold new goal position x-coordinate. </para>
+</listitem>
+            <listitem><para>double <link linkend="_node__a__1_8cpp_1a3cc29d9b9ab8b4112c11796d096f0b91">y_new</link></para>
+
+<para>Variable to hold new goal position y-coordinate. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A node that implements an action client, allowing the user to set a target (x, y) or to cancel it. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Jan Drozd </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>3/05/2023 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_node__a__1_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>node_a_1.cpp</secondary></indexterm>
+<indexterm><primary>node_a_1.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (int argc, char ** argv)</computeroutput></para><para>
+
+<para>Main function for node_a_1. </para>
+</para>
+
+<para>This node is responsible for implementing an action client that allows the user to set a new target (x, y) goal or to cancel the current goal. The node interacts with an action server to send goals or cancel them, and it communicates with a service node to track the number of goals reached and canceled.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>0 on successful execution </para>
+</formalpara>
+</para>
+<para>
+Definition at line 34 of file node_a_1.cpp.</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_node__a__1_8cpp_1ac85e973dc539d2828e70e8fbd9e72713"/>    <section>
+    <title>x_new</title>
+<indexterm><primary>x_new</primary><secondary>node_a_1.cpp</secondary></indexterm>
+<indexterm><primary>node_a_1.cpp</primary><secondary>x_new</secondary></indexterm>
+<para><computeroutput>double x_new</computeroutput></para><para>
+
+<para>Variable to hold new goal position x-coordinate. </para>
+</para>
+<para>
+Definition at line 19 of file node_a_1.cpp.</para>
+    </section><anchor xml:id="_node__a__1_8cpp_1a3cc29d9b9ab8b4112c11796d096f0b91"/>    <section>
+    <title>y_new</title>
+<indexterm><primary>y_new</primary><secondary>node_a_1.cpp</secondary></indexterm>
+<indexterm><primary>node_a_1.cpp</primary><secondary>y_new</secondary></indexterm>
+<para><computeroutput>double y_new</computeroutput></para><para>
+
+<para>Variable to hold new goal position y-coordinate. </para>
+</para>
+<para>
+Definition at line 22 of file node_a_1.cpp.</para>
+</section>
+</section>
+</section>

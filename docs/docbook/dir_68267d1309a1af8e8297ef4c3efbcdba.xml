@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_68267d1309a1af8e8297ef4c3efbcdba">
+<title>src Directory Reference</title>
+<indexterm><primary>src Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_node__a__1_8cpp">node_a_1.cpp</link></para>
+
+<para>A node that implements an action client, allowing the user to set a target (x, y) or to cancel it. </para>
+</listitem>
+            <listitem><para>file <link linkend="_node__a__2_8cpp">node_a_2.cpp</link></para>
+
+<para>A node that publishes the robot position and velocity as a custom message (x, y, vel_x, vel_y), relying on the values published on the topic /odom. </para>
+</listitem>
+            <listitem><para>file <link linkend="_node__b_8cpp">node_b.cpp</link></para>
+
+<para>A service node that, when called, prints the number of goals reached and cancelled. </para>
+</listitem>
+            <listitem><para>file <link linkend="_node__c_8cpp">node_c.cpp</link></para>
+
+<para>A node that subscribes to the robot&apos;s position and velocity (using the custom message), and prints the distance of the robot from the target and the robot&apos;s average speed. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

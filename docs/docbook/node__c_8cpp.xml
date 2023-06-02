@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_node__c_8cpp">
+<title>src/node_c.cpp File Reference</title>
+<indexterm><primary>src/node_c.cpp</primary></indexterm>
+<para>
+
+<para>A node that subscribes to the robot&apos;s position and velocity (using the custom message), and prints the distance of the robot from the target and the robot&apos;s average speed. </para>
+ 
+</para>
+<programlisting>#include &lt;ros/ros.h&gt;
+#include &lt;assignment_2_2022/Message1.h&gt;
+#include &lt;math.h&gt;
+</programlisting>Include dependency graph for node_c.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="node__c_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_node__c_8cpp_1a988991f54cb14226678386619532c372">distance</link> (double <link linkend="_node__c_8cpp_1ac3ca5b1f6c77b23663b004b1bfea29b4">p_x</link>, double <link linkend="_node__c_8cpp_1af2dd1f4f1aa6696f64fa6a65a5a00cb3">p_y</link>)</para>
+
+<para>Helper function for computing distance. </para>
+</listitem>
+            <listitem><para>double <link linkend="_node__c_8cpp_1a1f8e17c39f083e6fab3c8e6fa9fc8eee">average_speed</link> (double <link linkend="_node__c_8cpp_1af8ea4d2851d2d656fd42be239e36ce6e">v_x</link>, double <link linkend="_node__c_8cpp_1a2161079bbf87834cfdf4d3548a53eb3b">v_y</link>)</para>
+
+<para>Helper function for computing average speed. </para>
+</listitem>
+            <listitem><para>void <link linkend="_node__c_8cpp_1a40d5caef8970f735a2d3036ba3c7b229">dataCallback</link> (const assignment_2_2022::Message1::ConstPtr &amp;data)</para>
+
+<para>Callback function for processing robot data. </para>
+</listitem>
+            <listitem><para>int <link linkend="_node__c_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627">main</link> (int argc, char **argv)</para>
+
+<para>Main function for node_c. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_node__c_8cpp_1ac3ca5b1f6c77b23663b004b1bfea29b4">p_x</link></para>
+
+<para>Declare variables in the global scope. </para>
+</listitem>
+            <listitem><para>double <link linkend="_node__c_8cpp_1af2dd1f4f1aa6696f64fa6a65a5a00cb3">p_y</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_node__c_8cpp_1af8ea4d2851d2d656fd42be239e36ce6e">v_x</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_node__c_8cpp_1a2161079bbf87834cfdf4d3548a53eb3b">v_y</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_node__c_8cpp_1ae83434042563fab5b48a2e6e8c42528a">vel</link> = 0.0</para>
+</listitem>
+            <listitem><para>int <link linkend="_node__c_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf">count</link> = 1</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A node that subscribes to the robot&apos;s position and velocity (using the custom message), and prints the distance of the robot from the target and the robot&apos;s average speed. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Jan Drozd </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>3/05/2023 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_node__c_8cpp_1a1f8e17c39f083e6fab3c8e6fa9fc8eee"/>    <section>
+    <title>average_speed()</title>
+<indexterm><primary>average_speed</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>average_speed</secondary></indexterm>
+<para><computeroutput>double average_speed (double v_x, double v_y)</computeroutput></para><para>
+
+<para>Helper function for computing average speed. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v_x</entry>
+                                <entry>
+<para>Robot&apos;s x velocity </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v_y</entry>
+                                <entry>
+<para>Robot&apos;s y velocity </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Average speed of the robot </para>
+</formalpara>
+</para>
+<para>
+Definition at line 46 of file node_c.cpp.</para>
+    </section><anchor xml:id="_node__c_8cpp_1a40d5caef8970f735a2d3036ba3c7b229"/>    <section>
+    <title>dataCallback()</title>
+<indexterm><primary>dataCallback</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>dataCallback</secondary></indexterm>
+<para><computeroutput>void dataCallback (const assignment_2_2022::Message1::ConstPtr &amp; data)</computeroutput></para><para>
+
+<para>Callback function for processing robot data. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>Pointer to the received custom message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 59 of file node_c.cpp.</para>
+    </section><anchor xml:id="_node__c_8cpp_1a988991f54cb14226678386619532c372"/>    <section>
+    <title>distance()</title>
+<indexterm><primary>distance</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>distance</secondary></indexterm>
+<para><computeroutput>double distance (double p_x, double p_y)</computeroutput></para><para>
+
+<para>Helper function for computing distance. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>p_x</entry>
+                                <entry>
+<para>Robot&apos;s x position </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>p_y</entry>
+                                <entry>
+<para>Robot&apos;s y position </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Distance between the robot and the target </para>
+</formalpara>
+</para>
+<para>
+Definition at line 29 of file node_c.cpp.</para>
+    </section><anchor xml:id="_node__c_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (int argc, char ** argv)</computeroutput></para><para>
+
+<para>Main function for node_c. </para>
+</para>
+
+<para>This node subscribes to the robot&apos;s position and velocity and calculates the distance between the robot and the target, as well as the average speed of the robot.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>0 on successful execution </para>
+</formalpara>
+</para>
+<para>
+Definition at line 79 of file node_c.cpp.</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_node__c_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf"/>    <section>
+    <title>count</title>
+<indexterm><primary>count</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>count</secondary></indexterm>
+<para><computeroutput>int count = 1</computeroutput></para><para>
+Definition at line 20 of file node_c.cpp.</para>
+    </section><anchor xml:id="_node__c_8cpp_1ac3ca5b1f6c77b23663b004b1bfea29b4"/>    <section>
+    <title>p_x</title>
+<indexterm><primary>p_x</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>p_x</secondary></indexterm>
+<para><computeroutput>double p_x</computeroutput></para><para>
+
+<para>Declare variables in the global scope. </para>
+</para>
+<para>
+Definition at line 18 of file node_c.cpp.</para>
+    </section><anchor xml:id="_node__c_8cpp_1af2dd1f4f1aa6696f64fa6a65a5a00cb3"/>    <section>
+    <title>p_y</title>
+<indexterm><primary>p_y</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>p_y</secondary></indexterm>
+<para><computeroutput>double p_y</computeroutput></para><para>
+Definition at line 18 of file node_c.cpp.</para>
+    </section><anchor xml:id="_node__c_8cpp_1af8ea4d2851d2d656fd42be239e36ce6e"/>    <section>
+    <title>v_x</title>
+<indexterm><primary>v_x</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>v_x</secondary></indexterm>
+<para><computeroutput>double v_x</computeroutput></para><para>
+Definition at line 18 of file node_c.cpp.</para>
+    </section><anchor xml:id="_node__c_8cpp_1a2161079bbf87834cfdf4d3548a53eb3b"/>    <section>
+    <title>v_y</title>
+<indexterm><primary>v_y</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>v_y</secondary></indexterm>
+<para><computeroutput>double v_y</computeroutput></para><para>
+Definition at line 18 of file node_c.cpp.</para>
+    </section><anchor xml:id="_node__c_8cpp_1ae83434042563fab5b48a2e6e8c42528a"/>    <section>
+    <title>vel</title>
+<indexterm><primary>vel</primary><secondary>node_c.cpp</secondary></indexterm>
+<indexterm><primary>node_c.cpp</primary><secondary>vel</secondary></indexterm>
+<para><computeroutput>double vel = 0.0</computeroutput></para><para>
+Definition at line 19 of file node_c.cpp.</para>
+</section>
+</section>
+</section>

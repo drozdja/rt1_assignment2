@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacebug__as">
+<title>bug_as Namespace Reference</title>
+<indexterm><primary>bug_as</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>def <link linkend="_namespacebug__as_1ab60ee3a18f82901f764c228cab7715a9">clbk_odom</link> (msg)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacebug__as_1a4119d98608166ee0b88e091319a1bc36">clbk_laser</link> (msg)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacebug__as_1a3c7d2081c97d59613bd86cecc92c95aa">change_state</link> (state)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacebug__as_1a4cb91dd1a836fdcc1f433b72f9b6ef40">normalize_angle</link> (angle)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacebug__as_1a2fe7a2b363215b1c6d054e563ff80d46">done</link> ()</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacebug__as_1a94385d0a19f35bc8faab7ea1bb12324a">planning</link> (goal)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacebug__as_1a9b1d3f586f8d4174c9c2ba2a074a35ea">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacebug__as_1aae11f9e7d34d042e3b75f990708f30b7">srv_client_go_to_point_</link> = None</para>
+</listitem>
+            <listitem><para><link linkend="_namespacebug__as_1aaf82618e313f873dcde442872ce41dca">srv_client_wall_follower_</link> = None</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacebug__as_1afc76d5b7eaf5bbc9d952a1424713adc5">yaw_</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacebug__as_1a27d35e323287c67a62f9e49aa85c81c0">yaw_error_allowed_</link> = 5 * (math.pi / 180)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacebug__as_1a499f87dbcadef3fdd8bf1813ff254980">position_</link> = Point()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacebug__as_1a19167a19063724b9c82eb1ec62a73430">pose_</link> = Pose()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacebug__as_1af85cbf56a31a686cd9c0ca7a925976c6">desired_position_</link> = Point()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacebug__as_1a5df7001712850734cef001cf0be212c8">z</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacebug__as_1a4c3231dd163d5f4503c5afde05d774e3">regions_</link> = None</para>
+</listitem>
+            <listitem><para>list <link linkend="_namespacebug__as_1ac5e332e5e1e9dec2ab24b79910c923b5">state_desc_</link> = [&apos;Go to point&apos;, &apos;wall following&apos;, &apos;<link linkend="_namespacebug__as_1a2fe7a2b363215b1c6d054e563ff80d46">done</link>&apos;]</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacebug__as_1abb23e110e8f093c82fe0f79ca0cd399d">state_</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespacebug__as_1a3c7d2081c97d59613bd86cecc92c95aa"/>    <section>
+    <title>change_state()</title>
+<indexterm><primary>change_state</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>change_state</secondary></indexterm>
+<para><computeroutput>def bug_as.change_state ( state)</computeroutput></para><para>
+Definition at line 61 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a4119d98608166ee0b88e091319a1bc36"/>    <section>
+    <title>clbk_laser()</title>
+<indexterm><primary>clbk_laser</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>clbk_laser</secondary></indexterm>
+<para><computeroutput>def bug_as.clbk_laser ( msg)</computeroutput></para><para>
+Definition at line 50 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1ab60ee3a18f82901f764c228cab7715a9"/>    <section>
+    <title>clbk_odom()</title>
+<indexterm><primary>clbk_odom</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>clbk_odom</secondary></indexterm>
+<para><computeroutput>def bug_as.clbk_odom ( msg)</computeroutput></para><para>
+Definition at line 33 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a2fe7a2b363215b1c6d054e563ff80d46"/>    <section>
+    <title>done()</title>
+<indexterm><primary>done</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>done</secondary></indexterm>
+<para><computeroutput>def bug_as.done ( )</computeroutput></para><para>
+Definition at line 83 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a9b1d3f586f8d4174c9c2ba2a074a35ea"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>def bug_as.main ( )</computeroutput></para><para>
+Definition at line 159 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a4cb91dd1a836fdcc1f433b72f9b6ef40"/>    <section>
+    <title>normalize_angle()</title>
+<indexterm><primary>normalize_angle</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>normalize_angle</secondary></indexterm>
+<para><computeroutput>def bug_as.normalize_angle ( angle)</computeroutput></para><para>
+Definition at line 78 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a94385d0a19f35bc8faab7ea1bb12324a"/>    <section>
+    <title>planning()</title>
+<indexterm><primary>planning</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>planning</secondary></indexterm>
+<para><computeroutput>def bug_as.planning ( goal)</computeroutput></para><para>
+Definition at line 90 of file bug_as.py.</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespacebug__as_1af85cbf56a31a686cd9c0ca7a925976c6"/>    <section>
+    <title>desired_position_</title>
+<indexterm><primary>desired_position_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>desired_position_</secondary></indexterm>
+<para><computeroutput>bug_as.desired_position_ = Point()</computeroutput></para><para>
+Definition at line 21 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a19167a19063724b9c82eb1ec62a73430"/>    <section>
+    <title>pose_</title>
+<indexterm><primary>pose_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>pose_</secondary></indexterm>
+<para><computeroutput>bug_as.pose_ = Pose()</computeroutput></para><para>
+Definition at line 20 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a499f87dbcadef3fdd8bf1813ff254980"/>    <section>
+    <title>position_</title>
+<indexterm><primary>position_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>position_</secondary></indexterm>
+<para><computeroutput>bug_as.position_ = Point()</computeroutput></para><para>
+Definition at line 19 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a4c3231dd163d5f4503c5afde05d774e3"/>    <section>
+    <title>regions_</title>
+<indexterm><primary>regions_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>regions_</secondary></indexterm>
+<para><computeroutput>bug_as.regions_ = None</computeroutput></para><para>
+Definition at line 23 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1aae11f9e7d34d042e3b75f990708f30b7"/>    <section>
+    <title>srv_client_go_to_point_</title>
+<indexterm><primary>srv_client_go_to_point_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>srv_client_go_to_point_</secondary></indexterm>
+<para><computeroutput>bug_as.srv_client_go_to_point_ = None</computeroutput></para><para>
+Definition at line 15 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1aaf82618e313f873dcde442872ce41dca"/>    <section>
+    <title>srv_client_wall_follower_</title>
+<indexterm><primary>srv_client_wall_follower_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>srv_client_wall_follower_</secondary></indexterm>
+<para><computeroutput>bug_as.srv_client_wall_follower_ = None</computeroutput></para><para>
+Definition at line 16 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1abb23e110e8f093c82fe0f79ca0cd399d"/>    <section>
+    <title>state_</title>
+<indexterm><primary>state_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>state_</secondary></indexterm>
+<para><computeroutput>int bug_as.state_ = 0</computeroutput></para><para>
+Definition at line 25 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1ac5e332e5e1e9dec2ab24b79910c923b5"/>    <section>
+    <title>state_desc_</title>
+<indexterm><primary>state_desc_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>state_desc_</secondary></indexterm>
+<para><computeroutput>list bug_as.state_desc_ = [&apos;Go to point&apos;, &apos;wall following&apos;, &apos;<link linkend="_namespacebug__as_1a2fe7a2b363215b1c6d054e563ff80d46">done</link>&apos;]</computeroutput></para><para>
+Definition at line 24 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1afc76d5b7eaf5bbc9d952a1424713adc5"/>    <section>
+    <title>yaw_</title>
+<indexterm><primary>yaw_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>yaw_</secondary></indexterm>
+<para><computeroutput>int bug_as.yaw_ = 0</computeroutput></para><para>
+Definition at line 17 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a27d35e323287c67a62f9e49aa85c81c0"/>    <section>
+    <title>yaw_error_allowed_</title>
+<indexterm><primary>yaw_error_allowed_</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>yaw_error_allowed_</secondary></indexterm>
+<para><computeroutput>int bug_as.yaw_error_allowed_ = 5 * (math.pi / 180)</computeroutput></para><para>
+Definition at line 18 of file bug_as.py.</para>
+    </section><anchor xml:id="_namespacebug__as_1a5df7001712850734cef001cf0be212c8"/>    <section>
+    <title>z</title>
+<indexterm><primary>z</primary><secondary>bug_as</secondary></indexterm>
+<indexterm><primary>bug_as</primary><secondary>z</secondary></indexterm>
+<para><computeroutput>bug_as.z</computeroutput></para><para>
+Definition at line 22 of file bug_as.py.</para>
+</section>
+</section>
+</section>

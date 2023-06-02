@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index">
+    <info>
+    <title>RT2 Assignment</title>
+    </info>
+<chapter>
+    <title># Research Track - Assignment 2</title>
+    <xi:include href="mainpage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Namespace Documentation</title>
+<xi:include href="namespacebug__as.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespacego__to__point__service.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespacewall__follow__service.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="README_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="bug__as_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="go__to__point__service_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="wall__follow__service_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="node__a__1_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="node__a__2_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="node__b_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="node__c_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

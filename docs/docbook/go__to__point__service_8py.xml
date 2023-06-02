@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_go__to__point__service_8py">
+<title>scripts/go_to_point_service.py File Reference</title>
+<indexterm><primary>scripts/go_to_point_service.py</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacego__to__point__service">go_to_point_service</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1acf2f8e880355dd31df1f330f7f10b7f9">go_to_point_service.go_to_point_switch</link> (req)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1adcbe48e090034144d76fea10c6537ac9">go_to_point_service.clbk_odom</link> (msg)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1abb8fd97f7fbaccc6b4f1f80b258c7977">go_to_point_service.change_state</link> (state)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1a5cb3225f30d2cdefd5cda701f13e1f9e">go_to_point_service.normalize_angle</link> (angle)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1a60e4565e2e2ebffba35774ee78838e77">go_to_point_service.fix_yaw</link> (des_pos)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1a531455abf876b239c51ab236f7d459b2">go_to_point_service.go_straight_ahead</link> (des_pos)</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1a8fd364cf9483fb92353279ddd13116d0">go_to_point_service.done</link> ()</para>
+</listitem>
+            <listitem><para>def <link linkend="_namespacego__to__point__service_1aff61ce18210c0b3ae85d5a24810631ef">go_to_point_service.main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_namespacego__to__point__service_1abe657bd9603dc3f58a1956668813514e">go_to_point_service.active_</link> = False</para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1a7687850055557a27f335be20e994c023">go_to_point_service.position_</link> = Point()</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacego__to__point__service_1ac0d754b5218554bf0aa6507e08262aa4">go_to_point_service.yaw_</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacego__to__point__service_1a7302709bb82adca46efc76daaa821aa7">go_to_point_service.state_</link> = 0</para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1a17e47e580dbbf300a91d42e81bb91856">go_to_point_service.desired_position_</link> = Point()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1a2e836af955467ad8d94a57e154023d75">go_to_point_service.x</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1af174820ca4271dd1a4a3db2cb16c5582">go_to_point_service.y</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1a1e0590d4e8fc1de7369864255776b1ac">go_to_point_service.z</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacego__to__point__service_1a2464d5355e9bb593fa3ab79354a574f1">go_to_point_service.yaw_precision_</link> = math.pi / 9</para>
+</listitem>
+            <listitem><para>int <link linkend="_namespacego__to__point__service_1a53e290ebfa498679a2421356d35ccd0e">go_to_point_service.yaw_precision_2_</link> = math.pi / 90</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1af5f23f6949a7c8902af969b86d59f0ff">go_to_point_service.dist_precision_</link> = 0.3</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1aa4dcb2c51349c6a486168f6bc2cdb094">go_to_point_service.kp_a</link> = 3.0</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1a1dbf3b8830618a71226b15c005c0b5e5">go_to_point_service.kp_d</link> = 0.2</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1ae65f765636456df7afcf93a22b51038e">go_to_point_service.ub_a</link> = 0.6</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1a54d632450f4291a2ff664550f68af893">go_to_point_service.lb_a</link> = -0.5</para>
+</listitem>
+            <listitem><para>float <link linkend="_namespacego__to__point__service_1a6f1913e3ce0b294a3cc1a519079137b9">go_to_point_service.ub_d</link> = 0.6</para>
+</listitem>
+            <listitem><para><link linkend="_namespacego__to__point__service_1ae04aed6a94addf0dd452dfe17235b8fc">go_to_point_service.pub</link> = None</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>
