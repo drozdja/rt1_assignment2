@@ -1,17 +1,18 @@
-# Research Track - Assignment 2
+# Research Track2  - Assignment 2
 =============================
 
 Description
 ------------
 - (node_a_1) A node that implements an action client, allowing the user to set a target (x, y) or to cancel it.
-- (node_a_2) Anode publishes the robot position and velocity as a custom message (x,y, vel_x, vel_z), by relying on the values published on the topic /odom
+- (node_a_2) A node publishes the robot position and velocity as a custom message (x,y, vel_x, vel_z), by relying on the values published on the topic /odom
+- (node_a) A node that combines the functionality of node_a_1 and node_a_2 and provides a user interface in jupyter lab.
 - (node_b) A service node that, when called, prints the number of goals reached and cancelled;
 - (node_c) A node that subscribes to the robot’s position and velocity (using the custom message) and prints the distance of the robot from the target and the robot’s average speed. Use a parameter to set how fast the node publishes the information. 
 
 Installation
 -------
 
-Create a catjing workspace:
+Create a catkin workspace:
 
 ```shell
 $ mkdir rt1_assignment2/src
@@ -33,7 +34,15 @@ $ catkin_make
 $ source devel/setup.bash
 ```
 
-Running
+Runnning the rt2_assignment2
+-------
+```shell
+$ roslaunch assignment_2_2022 rt2_ass2.launch 
+$ jupyter lab node_a.ipynb
+```
+
+
+Running the rt1_assignment2
 -------
 
 ```shell
